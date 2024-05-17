@@ -11,17 +11,30 @@ const App = () => {
   return (
     <div>
       <h1>Apartment List</h1>
-      <ul>
-        {apartments.map(apartment => (
-          <li key={apartment.id}>
-            <h2>{apartment.name}</h2>
-            <p>Address: {apartment.address}</p>
-            <p>Sales Representative: {apartment.salesrep}</p>
-            <p>Floor Area: {apartment.floorarea} sqm</p>
-            <p>Register Date: {apartment.registerdate}</p>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Sales Representative</th>
+            <th>Floor Area (sqm)</th>
+            <th>Register Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {apartments.map(apartment => (
+            <tr key={apartment.id}>
+              <td>{apartment.id}</td>
+              <td>{apartment.name}</td>
+              <td>{apartment.address}</td>
+              <td>{apartment.salesrep}</td>
+              <td>{apartment.floorarea}</td>
+              <td>{apartment.registerdate}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
